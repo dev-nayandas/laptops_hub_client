@@ -1,7 +1,7 @@
 import React from 'react';
 import Samsung from './Samsung';
 
-const SamsungCard = ({samsung}) => {
+const SamsungCard = ({samsung, setItem}) => {
     const {model,img,location, resalePrice,orginalPrice, usedTime, sellerName} = samsung;
     return (
         <div className="card w-96 bg-base-100 shadow-xl bg-black text-accent ">
@@ -14,7 +14,7 @@ const SamsungCard = ({samsung}) => {
           <p>Total Used Time{usedTime}</p>
           <p> Seller Name{sellerName}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Book Now</button>
+          <label onClick={()=>setItem(samsung)} htmlFor="bookingModal" className="btn btn-primary">Book Now</label>
           </div>
         </div>
       </div>

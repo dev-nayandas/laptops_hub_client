@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AppleCard = ({apple}) => {
+const AppleCard = ({apple, setItem}) => {
     const {model,img,location, resalePrice,orginalPrice, usedTime, sellerName} = apple;
     return (
         <div className="card w-96 bg-base-100 shadow-xl bg-black text-accent ">
@@ -13,7 +13,7 @@ const AppleCard = ({apple}) => {
     <p>Total Used Time{usedTime}</p>
     <p> Seller Name{sellerName}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Book Now</button>
+    <label onClick={()=>setItem(apple)} htmlFor="bookingModal" className="btn btn-primary">Book Now</label>
     </div>
   </div>
 </div>

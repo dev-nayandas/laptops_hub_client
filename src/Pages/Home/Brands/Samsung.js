@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import BookingModal from '../../BookingModal/BookingModal';
 import SamsungCard from './SamsungCard';
 
 const Samsung = () => {
     const samsung = useLoaderData();
+    const [item, setItem]= useState(null)
     return (
         <div className='mx-auto'>
             <div>
@@ -13,10 +15,16 @@ const Samsung = () => {
                 {
                     samsung.map(apple => <SamsungCard
                         key={apple._id}
+                        setItem={setItem}
                         samsung = {apple}
                     ></SamsungCard>)
                 }
             </div>
+            { item &&
+       <BookingModal
+            item ={item}
+        ></BookingModal>
+        }
         </div>
     );
 };

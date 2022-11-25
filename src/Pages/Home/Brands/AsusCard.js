@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AsusCard = ({asus}) => {
+const AsusCard = ({asus,setItem}) => {
     const {model,img,location, resalePrice,orginalPrice, usedTime, sellerName} = asus;
    
     return (
@@ -14,7 +14,9 @@ const AsusCard = ({asus}) => {
           <p>Total Used Time: {usedTime}</p>
           <p> Seller Name: {sellerName}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Book Now</button>
+
+           
+            <label onClick={()=>setItem(asus)} htmlFor="bookingModal" className="btn btn-primary">Book Now</label>
           </div>
         </div>
       </div>

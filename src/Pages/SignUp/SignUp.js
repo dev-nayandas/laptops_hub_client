@@ -60,6 +60,21 @@ const SignUp = () => {
         <input {...register("name", {required:"Name  is required"})} placeholder="name" type="text" className="input input-bordered w-full max-w-xs"/>
         {errors.email && <p className='text-red-500' role="alert">{errors.email?.message}</p>}
     </div>
+
+
+    <div className="form-control w-full max-w-xs">
+        <label className="label">
+            <span className="label-text">Choose account type</span>
+         </label>
+         <select {...register("accountType", {required:"It  is required"})} className="select select-bordered w-full max-w-xs">
+      <option  selected>Buyer</option>
+      <option>Seller</option>
+      
+</select>
+        {/* {errors.email && <p className='text-red-500' role="alert">{errors.email?.message}</p>} */}
+    </div>
+
+
     <div className="form-control w-full max-w-xs">
         <label className="label">
             <span className="label-text">Email</span>
