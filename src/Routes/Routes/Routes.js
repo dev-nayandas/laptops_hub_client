@@ -10,6 +10,7 @@ import Laptops from "../../Pages/Laptops/Laptops";
 import Samsung from "../../Pages/Home/Brands/Samsung";
 import Asus from "../../Pages/Home/Brands/Asus";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
 
 const router  = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router  = createBrowserRouter([
             {
                 path:'/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path:'/dashboard',
+                element: <Dashboard></Dashboard>
             },
             {
                 path: '/login',

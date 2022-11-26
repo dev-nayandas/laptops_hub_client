@@ -25,11 +25,17 @@ const NavBar = () => {
         {
               user?.email?
          <div className=''>
-                 
-                 <li><Link onClick={handleSignOut} className="link no-underline">Sign Out</Link></li>
+               <li><Link to="dashboard no-underline" className='link'>Dashboard</Link></li>  
+            <li><Link onClick={handleSignOut} className="link no-underline">Sign Out</Link></li>
+           
+          
          </div>
 
-              : <li><Link className='link' to='/login'>Login</Link></li>
+              : <div>
+                  <li><Link className='link' to='/login'>Login</Link></li>
+                 
+              </div> 
+              
             }
       </ul>
     </div>
@@ -40,12 +46,15 @@ const NavBar = () => {
         {menuItems}
         {
               user?.email?
-         <div className=''>
-                 
+         <div className='flex'>
+              <li><Link to="dashboard" className='link no-underline'>Dashboard</Link></li>   
               <li><Link onClick={handleSignOut} className="link no-underline">Sign Out</Link></li>
+              
          </div>
 
-              : <li><Link className='link' to='/login'>Login</Link></li>
+              : <div>
+                <li><Link className='link' to='/login'>Login</Link></li>
+              </div> 
             }
     </ul>
   </div>
