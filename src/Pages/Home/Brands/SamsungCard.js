@@ -10,9 +10,9 @@ const SamsungCard = ({samsung, setItem}) => {
           <h2 className="card-title">Model :{model}</h2>
           <p>Location :{location}</p>
           <p>Price: {resalePrice}</p>
-          <p>Merket Price{orginalPrice}</p>
-          <p>Total Used Time{usedTime}</p>
-          <p> Seller Name{sellerName}</p>
+          <p>Merket Price: {orginalPrice}</p>
+          <p>Total Used Time: {usedTime}</p>
+          <p> Seller Name: {sellerName}</p>
           <div className="card-actions justify-end">
           <label onClick={()=>setItem(samsung)} htmlFor="bookingModal" className="btn btn-primary">Book Now</label>
           </div>

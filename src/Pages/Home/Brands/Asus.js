@@ -9,9 +9,9 @@ const Asus = () => {
     return (
         <div className='mx-auto'>
         <div>
-        <h1>All apple products are here</h1>
+        <h1 className='text-center text-3xl text-primary mt-12 mb-6'>All Asus products are here</h1>
         </div>
-        <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-auto'>
+        <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             {
                 asus.map(asus => <AsusCard
                     key={asus._id}

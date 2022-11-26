@@ -43,12 +43,12 @@ const router  = createBrowserRouter([
             },
             {
                 path:'/samsung',
-                loader: () => fetch("http://localhost:5000/apple"),
+              
                 element: <PrivateRoute><Samsung></Samsung></PrivateRoute>
             },
             {
                 path:'/asus',
-                loader: () => fetch("http://localhost:5000/apple"),
+                loader: () => fetch("http://localhost:5000/asus"),
                 element: <PrivateRoute><Asus></Asus></PrivateRoute>
             },
             {

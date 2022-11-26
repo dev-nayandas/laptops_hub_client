@@ -25,9 +25,9 @@ const Categories = () => {
                  } */}
                <Link to="/apple" className='px-4'><button className="btn btn-outline btn-primary ">Apple</button></Link>
                 
-               <Link to="/samsung" className='px-4'><button className="btn btn-outline btn-primary ">Ausus</button></Link>
+               <Link to="/samsung" className='px-4'><button className="btn btn-outline btn-primary ">Samsung</button></Link>
                 
-               <Link to="/asus" className='px-4'><button className="btn btn-outline btn-primary ">Samsung</button></Link>
+               <Link to="/asus" className='px-4'><button className="btn btn-outline btn-primary ">Asus</button></Link>
                 
                
                 
