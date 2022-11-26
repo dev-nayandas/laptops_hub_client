@@ -14,74 +14,97 @@ import Dashboard from "../../Pages/Dashboard/Dashboard";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import MyOrders from "../../Pages/Dashboard/MyOrders";
 import AllUsers from "../../Pages/Dashboard/AllUsers";
+import AddAProduct from "../../Pages/Dashboard/AddAProduct";
 
-const router  = createBrowserRouter([
-    {
-        path: '/',
-        element: <Main></Main>,
-        children: [
-            {
-                path:'/',
-                element: <Home></Home>
-            },
-            {
-                path:'/home',
-                element: <Home></Home>
-            },
-            {
-                path:'/blogs',
-                element: <Blogs></Blogs>
-            },
-           
-            {
-                path: '/login',
-                element: <Login></Login>
-            },
-            {
-                path:'/signup',
-                element: <SignUp></SignUp>
-            },
-            {
-                path:'/apple',
-                loader: () => fetch("http://localhost:5000/apple"),
-                element: <PrivateRoute><Apple></Apple></PrivateRoute>
-            },
-            {
-                path:'/samsung',
-              
-                element: <PrivateRoute><Samsung></Samsung></PrivateRoute>
-            },
-            {
-                path:'/asus',
-                loader: () => fetch("http://localhost:5000/asus"),
-                element: <PrivateRoute><Asus></Asus></PrivateRoute>
-            },
-            {
-                path:'/laptops/:category_id',
-              
-                element: <Laptops></Laptops>,
-                loader: ({params}) => fetch(`http://localhost:5000/catagories?category_id=${params.category_id}`),
-            },
-        ]
-    },
-    {
-        
-        path:'/dashboard',
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/home",
+        element: <Home></Home>,
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/apple",
+        loader: () => fetch("http://localhost:5000/apple"),
+        element: (
+          <PrivateRoute>
+            <Apple></Apple>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/samsung",
+
+        element: (
+          <PrivateRoute>
+            <Samsung></Samsung>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/asus",
+        loader: () => fetch("http://localhost:5000/asus"),
+        element: (
+          <PrivateRoute>
+            <Asus></Asus>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/laptops/:category_id",
+
+        element: <Laptops></Laptops>,
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/catagories?category_id=${params.category_id}`
+          ),
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    loader: () => fetch("http://localhost:5000/users"),
+    element: (
+      <DashboardLayout>
+        <Dashboard></Dashboard>
+      </DashboardLayout>
+    ),
+    children: [
+      {
+        path: "/dashboard/orders",
+        element: <MyOrders></MyOrders>,
+      },
+      {
+        path: "/dashboard/allusers",
         loader: () => fetch("http://localhost:5000/users"),
-        element: <DashboardLayout><Dashboard></Dashboard></DashboardLayout>,
-        children: [
-            {
-                path:'/dashboard',
-                element:<MyOrders></MyOrders>
-            },
-            {
-                path:'/dashboard/allusers',
-                loader: () => fetch("http://localhost:5000/users"),
-                element:<AllUsers></AllUsers>
-            },
-        ] 
-        
-    },
-])
+        element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "/dashboard/addaproduct",
 
-export default router
+        element: <AddAProduct></AddAProduct>,
+      },
+    ],
+  },
+]);
+
+export default router;
