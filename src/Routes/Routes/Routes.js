@@ -11,6 +11,8 @@ import Samsung from "../../Pages/Home/Brands/Samsung";
 import Asus from "../../Pages/Home/Brands/Asus";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
+import DashboardLayout from "../../Layout/DashboardLayout";
+import MyOrders from "../../Pages/Dashboard/MyOrders";
 
 const router  = createBrowserRouter([
     {
@@ -29,10 +31,7 @@ const router  = createBrowserRouter([
                 path:'/blogs',
                 element: <Blogs></Blogs>
             },
-            {
-                path:'/dashboard',
-                element: <Dashboard></Dashboard>
-            },
+           
             {
                 path: '/login',
                 element: <Login></Login>
@@ -63,7 +62,19 @@ const router  = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/catagories?category_id=${params.category_id}`),
             },
         ]
-    }
+    },
+    {
+        
+        path:'/dashboard',
+        element: <DashboardLayout><Dashboard></Dashboard></DashboardLayout>,
+        children: [
+            {
+                path:'/dashboard',
+                element:<MyOrders></MyOrders>
+            }
+        ] 
+        
+    },
 ])
 
 export default router
