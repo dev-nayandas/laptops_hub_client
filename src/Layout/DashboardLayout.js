@@ -46,6 +46,7 @@ const users= useLoaderData([])
       <li><Link to="/dashboard/orders">My Orders</Link></li>
       <li><Link to="/dashboard/allusers">All Sellers & Buyers</Link></li>
       <li><Link to="/dashboard/addaproduct">Add a Product</Link></li>
+      <li><Link to="/dashboard/myproducts">My Products</Link></li>
       
     </ul>
   
