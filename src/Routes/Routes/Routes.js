@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import MyOrders from "../../Pages/Dashboard/MyOrders";
+import AllUsers from "../../Pages/Dashboard/AllUsers";
 
 const router  = createBrowserRouter([
     {
@@ -66,12 +67,18 @@ const router  = createBrowserRouter([
     {
         
         path:'/dashboard',
+        loader: () => fetch("http://localhost:5000/users"),
         element: <DashboardLayout><Dashboard></Dashboard></DashboardLayout>,
         children: [
             {
                 path:'/dashboard',
                 element:<MyOrders></MyOrders>
-            }
+            },
+            {
+                path:'/dashboard/allusers',
+                loader: () => fetch("http://localhost:5000/users"),
+                element:<AllUsers></AllUsers>
+            },
         ] 
         
     },

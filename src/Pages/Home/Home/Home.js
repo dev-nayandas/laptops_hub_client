@@ -7,7 +7,7 @@ import Secure from '../Secure/Secure';
 const Home = () => {
    
     return (
-        <div>
+        <div className=''>
             <Banner></Banner>
             <AdvertisedItems></AdvertisedItems>
             <Categories></Categories>
