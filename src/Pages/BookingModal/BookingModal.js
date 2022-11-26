@@ -15,6 +15,7 @@ const BookingModal = ({item}) => {
         event.preventDefault();
         const form = event.target;
         const email = user?.email;
+      
         const number = form?.number?.value;
         const location = form?.location?.value;
        
@@ -23,6 +24,7 @@ const BookingModal = ({item}) => {
           email,
           model,
           resalePrice,
+          img,
           number,
           location,
         }
@@ -63,6 +65,7 @@ const BookingModal = ({item}) => {
                  <input type="text" name='email' disabled value={user?.email} placeholder="Type here" className="input input-bordered w-full " />
                  <input type="text" name="model" disabled value={model} placeholder="Type here" className="input input-bordered w-full " />
                  <input type="text" name="resalePrice" disabled value={resalePrice} placeholder="Type here" className="input input-bordered w-full " />
+                 <input type="text" name="img" disabled value={img} placeholder="image url" className="input input-bordered w-full " />
                  <input type="text" name='number' placeholder="your phone number" className="input input-bordered w-full " />
                  <input type="text" name='location' placeholder="your location" className="input input-bordered w-full " />
                  <br />

@@ -5,7 +5,7 @@ import AuthProvider, { AuthContext } from "../../Context/AuthProvider/AuthProvid
 const MyOrders = () => {
   const {user} = useContext(AuthContext);
   
-  const url = `http://localhost:5000/orders?email=${user.email}`;
+  const url = `http://localhost:5000/orders?email=${user?.email}`;
   
   const [orders, setOrders] = useState([]);
   useEffect(()=>{
@@ -24,30 +24,34 @@ const MyOrders = () => {
         <table className="table table-zebra w-full">
           <thead>
             <tr>
-              <th></th>
-              <th>Name </th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Image</th>
+              <th>Name</th>
+              <th>price</th>
+              <th>Brand</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                {" "}
-                <div>
-                  <div className="avatar">
-                    <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                      <img src="https://placeimg.com/192/192/people" />
+            {
+              orders.map(order => <tr key={order._id}>
+               
+                <td>
+                  {" "}
+                  <div>
+                    <div className="avatar">
+                      <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src={order.img} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </td>
-              <th>1</th>
-
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
-            </tr>
+                </td>
+                <th>{order.model}</th>
+  
+                <td>${order.resalePrice}</td>
+                <td>Brand</td>
+                <td><button className="btn btn-outline btn-info">Pay</button></td>
+              </tr>)
+            }
           </tbody>
         </table>
       </div>

@@ -73,7 +73,7 @@ const Login = () => {
       <input  className='btn btn-primary w-full' type="submit"  value="login"/>
       <p>New to laptops hub?   <Link className='text-violet-800 font-bold' to="/signup">Create a accout</Link> </p>
       <div className="divider">OR</div>
-      <button className='btn btn-primary w-full'>Sign In With Google</button>
+      <button onClick={handleGoogleSubmit} className='btn btn-primary w-full'>Sign In With Google</button>
     </form>
             </div>
         </div>
