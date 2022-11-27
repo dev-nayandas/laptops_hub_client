@@ -16,6 +16,7 @@ import MyOrders from "../../Pages/Dashboard/MyOrders";
 import AllUsers from "../../Pages/Dashboard/AllUsers";
 import AddAProduct from "../../Pages/Dashboard/AddAProduct";
 import MyProducts from "../../Pages/Dashboard/MyProducts";
+import Error404 from "../../Pages/Error404/Error404";
 
 const router = createBrowserRouter([
   {
@@ -79,7 +80,12 @@ const router = createBrowserRouter([
             `http://localhost:5000/catagories?category_id=${params.category_id}`
           ),
       },
+    {
+      path:"*",
+      element:<Error404></Error404>
+    }
     ],
+   
   },
   {
     path: "/dashboard",
@@ -110,6 +116,8 @@ const router = createBrowserRouter([
         element: <MyProducts></MyProducts>,
       },
     ],
+ 
+
   },
 ]);
 
