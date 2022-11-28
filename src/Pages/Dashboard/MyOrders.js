@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import AuthProvider, { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const MyOrders = () => {
@@ -49,7 +50,7 @@ const MyOrders = () => {
   
                 <td>${order.resalePrice}</td>
                 <td>Brand</td>
-                <td><button className="btn btn-outline btn-info">Pay</button></td>
+                <td><Link to="/dashboard/orders/payment"><button className="btn btn-outline btn-info">Pay</button></Link></td>
               </tr>)
             }
           </tbody>

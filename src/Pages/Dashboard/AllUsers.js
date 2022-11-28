@@ -20,6 +20,7 @@ const AllUsers = () => {
         <th>Name</th>
         <th>Email</th>
         <th>User Type</th>
+        <th>Admin Action</th>
       </tr>
     </thead>
     <tbody>
@@ -31,11 +32,13 @@ const AllUsers = () => {
             <td>{user.name}</td>
             <td>{user.email}</td>
             <td>{user.accountType}</td>
+            <td><button className="btn btn-primary btn-xs">Delete</button></td>
           
           </tr>)
+         
       }
    
-     
+   
       
     </tbody>
   </table>

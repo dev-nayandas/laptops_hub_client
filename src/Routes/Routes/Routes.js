@@ -18,6 +18,8 @@ import AddAProduct from "../../Pages/Dashboard/AddAProduct";
 import MyProducts from "../../Pages/Dashboard/MyProducts";
 import Error404 from "../../Pages/Error404/Error404";
 import Users from "../../Pages/Dashboard/Users";
+import Payment from "../../Pages/Dashboard/Payment";
+import AdminRoute from "./AdminRoute";
 
 const router = createBrowserRouter([
   {
@@ -102,9 +104,13 @@ const router = createBrowserRouter([
         element: <MyOrders></MyOrders>,
       },
       {
+        path: "/dashboard/orders/payment",
+        element: <Payment></Payment>,
+      },
+      {
         path: "/dashboard/allusers",
         loader: () => fetch("http://localhost:5000/users"),
-        element: <AllUsers></AllUsers>,
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
       },
       {
         path: "/dashboard/users",
