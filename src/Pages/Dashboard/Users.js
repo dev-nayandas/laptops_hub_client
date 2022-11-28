@@ -7,11 +7,11 @@
 // const Users = () => {
 //    const [users, setUsers] = useState([]);
 //    useEffect(()=>{
-//     fetch('http://localhost:5000/users')
+//     fetch('https://final-project-server-drab.vercel.app/users')
 //     .then(res => res.json())
 //     .then(data => setUsers(data))
 //    },[])
-   
+
 //     return (
 //         <div>
 //            {

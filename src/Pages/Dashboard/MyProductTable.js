@@ -2,25 +2,23 @@ import React from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const MyProductTable = ({ product }) => {
-    console.log(product)
-    const { ProductName, price, MobileNumber } = product;
-    const handleMakeAdd =()=>{
-        fetch("http://localhost:5000/advertisedItems", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(product),
-          })
-            .then((res) => res.json())
-            .then((data) => {
-              if (data.acknowledged) {
-              
-               
-              toast.success("Successfully  maked a add");
-              }
-            });
-    }
+  console.log(product);
+  const { ProductName, price, MobileNumber } = product;
+  const handleMakeAdd = () => {
+    fetch("https://final-project-server-drab.vercel.app/advertisedItems", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          toast.success("Successfully  maked a add");
+        }
+      });
+  };
 
   return (
     <div>
@@ -33,7 +31,9 @@ const MyProductTable = ({ product }) => {
           <button className="btn btn-info">Delete sales status</button>
         </td>
         <td>
-          <button onClick={handleMakeAdd} className="btn btn-info">Make a Add</button>
+          <button onClick={handleMakeAdd} className="btn btn-info">
+            Make a Add
+          </button>
         </td>
       </tr>
       <Toaster></Toaster>

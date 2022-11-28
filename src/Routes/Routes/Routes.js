@@ -49,7 +49,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/apple",
-        loader: () => fetch("http://localhost:5000/apple"),
+        loader: () =>
+          fetch("https://final-project-server-drab.vercel.app/apple"),
         element: (
           <PrivateRoute>
             <Apple></Apple>
@@ -67,7 +68,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/asus",
-        loader: () => fetch("http://localhost:5000/asus"),
+        loader: () =>
+          fetch("https://final-project-server-drab.vercel.app/asus"),
         element: (
           <PrivateRoute>
             <Asus></Asus>
@@ -80,19 +82,18 @@ const router = createBrowserRouter([
         element: <Laptops></Laptops>,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/catagories?category_id=${params.category_id}`
+            `https://final-project-server-drab.vercel.app/catagories?category_id=${params.category_id}`
           ),
       },
-    {
-      path:"*",
-      element:<Error404></Error404>
-    }
+      {
+        path: "*",
+        element: <Error404></Error404>,
+      },
     ],
-   
   },
   {
     path: "/dashboard",
-    loader: () => fetch("http://localhost:5000/users"),
+    loader: () => fetch("https://final-project-server-drab.vercel.app/users"),
     element: (
       <DashboardLayout>
         <Dashboard></Dashboard>
@@ -109,12 +110,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/allusers",
-        loader: () => fetch("http://localhost:5000/users"),
-        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
+        loader: () =>
+          fetch("https://final-project-server-drab.vercel.app/users"),
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "/dashboard/users",
-        loader: () => fetch("http://localhost:5000/users"),
+        loader: () =>
+          fetch("https://final-project-server-drab.vercel.app/users"),
         element: <Users></Users>,
       },
       {
@@ -128,8 +135,6 @@ const router = createBrowserRouter([
         element: <MyProducts></MyProducts>,
       },
     ],
- 
-
   },
 ]);
 

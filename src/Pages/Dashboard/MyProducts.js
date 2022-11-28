@@ -4,27 +4,25 @@ import MyProductTable from "./MyProductTable";
 const MyProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://final-project-server-drab.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setProducts(data);
       });
   }, []);
-  let {ProductName} =products;
-  console.log(ProductName)
+  let { ProductName } = products;
+  console.log(ProductName);
   return (
-
-     <div>
-      
     <div>
       <div>
-        <h1>All  Product</h1>
-      </div>
-      <div>
-        <div className="overflow-x-auto">
-          <table className="table w-full">
-            {/* <thead>
+        <div>
+          <h1>All Product</h1>
+        </div>
+        <div>
+          <div className="overflow-x-auto">
+            <table className="table w-full">
+              {/* <thead>
               <tr>
                 <th></th>
                 <th>Name</th>
@@ -34,21 +32,21 @@ const MyProducts = () => {
                 <th>Make Add</th>
               </tr>
             </thead> */}
-            <tbody>
-            <td>
-                {
-                    products.map(product =><MyProductTable
-                    key={product._id}
-                    product={product}
-                    ></MyProductTable>)
-                }
-            </td>
-            </tbody>
-          </table>
+              <tbody>
+                <td>
+                  {products.map((product) => (
+                    <MyProductTable
+                      key={product._id}
+                      product={product}
+                    ></MyProductTable>
+                  ))}
+                </td>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-     </div>
   );
 };
 

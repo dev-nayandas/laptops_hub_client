@@ -11,27 +11,26 @@ const SignUp = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const { createUser, updateUser ,googleSignIn} = useContext(AuthContext);
+  const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
   const [signUpError, setSignUPError] = useState("");
   const [createdUserEmail, setCreatedUserEmail] = useState("");
 
   const navigate = useNavigate();
 
   const googleProvider = new GoogleAuthProvider();
-  const handleGoogleSubmit = () =>{
-    console.log('hello')
+  const handleGoogleSubmit = () => {
+    console.log("hello");
     googleSignIn(googleProvider)
-    .then(result =>{
-      const user = result.user;
-      navigate('/home') 
-      
-      console.log(user.email);
-      
-    })
-    .catch(error =>{
-      console.error(error);
-    })
-  }
+      .then((result) => {
+        const user = result.user;
+        navigate("/home");
+
+        console.log(user.email);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   const handleSignUp = (data) => {
     setSignUPError("");
@@ -45,7 +44,6 @@ const SignUp = () => {
         };
         // const accountType = data.accountType
         updateUser(userInfo)
-        
           .then(() => {
             saveUser(data.name, data.email, data.accountType);
             navigate("/home");
@@ -59,8 +57,8 @@ const SignUp = () => {
   };
 
   const saveUser = (name, email, accountType) => {
-    const user = { name, email,accountType };
-    fetch("http://localhost:5000/users", {
+    const user = { name, email, accountType };
+    fetch("https://final-project-server-drab.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -103,9 +101,8 @@ const SignUp = () => {
               className="select select-bordered w-full max-w-xs"
             >
               <option selected>Buyer</option>
-              <option >Seller</option>
+              <option>Seller</option>
             </select>
-         
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
@@ -157,7 +154,9 @@ const SignUp = () => {
           </Link>
         </p>
         <div className="divider">OR</div>
-        <button onClick={handleGoogleSubmit} className="btn btn-primary w-full">SignUp WITH GOOGLE</button>
+        <button onClick={handleGoogleSubmit} className="btn btn-primary w-full">
+          SignUp WITH GOOGLE
+        </button>
       </div>
     </div>
   );

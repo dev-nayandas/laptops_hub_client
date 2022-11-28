@@ -6,13 +6,13 @@ const AllUsers = () => {
   const users = useLoaderData([]);
 
   return (
-    <div>
+    <div >
       <div>
         <h1>All user page</h1>
       </div>
       <div>
       <div className="overflow-x-auto">
-  <table className="table w-full">
+  <table className="table w-full ">
    
     <thead>
       <tr>
@@ -23,7 +23,7 @@ const AllUsers = () => {
         <th>Admin Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
   
       {
         users.map((user ,i)=><tr

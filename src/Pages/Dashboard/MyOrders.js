@@ -1,23 +1,21 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AuthProvider, { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import AuthProvider, {
+  AuthContext,
+} from "../../Context/AuthProvider/AuthProvider";
 
 const MyOrders = () => {
-  const {user} = useContext(AuthContext);
-  
-  const url = `http://localhost:5000/orders?email=${user?.email}`;
-  
+  const { user } = useContext(AuthContext);
+
+  const url = `https://final-project-server-drab.vercel.app/orders?email=${user?.email}`;
+
   const [orders, setOrders] = useState([]);
-  useEffect(()=>{
-  
+  useEffect(() => {
     fetch(url)
-    .then(res=>res.json())
-    .then(data=>setOrders(data))
-   
-     
- 
-  })
+      .then((res) => res.json())
+      .then((data) => setOrders(data));
+  });
   return (
     <div>
       <h1>My Orders</h1>
@@ -33,9 +31,8 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {
-              orders.map(order => <tr key={order._id}>
-               
+            {orders.map((order) => (
+              <tr key={order._id}>
                 <td>
                   {" "}
                   <div>
@@ -47,12 +44,16 @@ const MyOrders = () => {
                   </div>
                 </td>
                 <th>{order.model}</th>
-  
+
                 <td>${order.resalePrice}</td>
                 <td>Brand</td>
-                <td><Link to="/dashboard/orders/payment"><button className="btn btn-outline btn-info">Pay</button></Link></td>
-              </tr>)
-            }
+                <td>
+                  <Link to="/dashboard/orders/payment">
+                    <button className="btn btn-outline btn-info">Pay</button>
+                  </Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

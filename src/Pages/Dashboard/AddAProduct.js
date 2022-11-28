@@ -3,20 +3,19 @@ import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const AddAProduct = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
-   
     event.preventDefault();
 
     const form = event.target;
-    const ProductName = form.ProductName.value;
+    const model = form.model.value;
     const img = form.img.value;
     const price = form.price.value;
     const condition = form.condition.value;
     const MobileNumber = form.MobileNumber.value;
     const description = form.description.value;
     const product = {
-      ProductName,
+      model,
       img,
       price,
       condition,
@@ -25,7 +24,7 @@ const AddAProduct = () => {
     };
     console.log(product);
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://final-project-server-drab.vercel.app/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,9 +34,8 @@ const AddAProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
-        
-          navigate('/dashboard/myproducts')
-        toast.success("Service added successfully");
+          navigate("/dashboard/myproducts");
+          toast.success("Service added successfully");
         }
       });
 
@@ -63,7 +61,7 @@ const AddAProduct = () => {
                     </label>
                     <input
                       type="text"
-                      name="ProductName"
+                      name="model"
                       placeholder="Product Name"
                       className="input input-bordered"
                       required
