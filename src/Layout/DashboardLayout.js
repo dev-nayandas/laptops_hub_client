@@ -1,9 +1,13 @@
 import React from "react";
 import { Link, Outlet, useLoaderData, useMatches } from "react-router-dom";
+import UseRoleCheck from "../Pages/Hooks/UseRoleCheck";
 import NavBar from "../Pages/Shared/NavBar/NavBar";
 
 const DashboardLayout = () => {
   const users = useLoaderData([]);
+  const [role] = UseRoleCheck(users?.accountType)
+
+
   return (
     <div>
       <NavBar></NavBar>
@@ -19,20 +23,29 @@ const DashboardLayout = () => {
         <div className="drawer-side">
           <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
           <ul className="menu p-4 w-80 bg-base-100 text-base-content">
-
-            <li>
+           
+          <Link to="/dashboard/orders">My Orders</Link>
+          <Link to="/dashboard/allusers">All Sellers & Buyers</Link> 
+          <Link to="/dashboard/addaproduct">Add a Product</Link>
+          <Link to="/dashboard/myproducts">My Products</Link> 
+          {/* {
+             role === 'Buyer' && <li>
               <Link to="/dashboard/orders">My Orders</Link>
             </li>
-            <li>
+            }
+            {
+              role=== 'admin' &&  <li>
               <Link to="/dashboard/allusers">All Sellers & Buyers</Link>
             </li>
-            <li>
-              <Link to="/dashboard/addaproduct">Add a Product</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/myproducts">My Products</Link>
-            </li>
-
+            }
+            {
+              role === 'Seller' &&  <><li>
+                <Link to="/dashboard/addaproduct">Add a Product</Link>
+              </li>
+              <li>
+                <Link to="/dashboard/myproducts">My Products</Link>
+              </li></>
+            } */}
             
           </ul>
         </div>

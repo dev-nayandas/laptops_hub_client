@@ -17,6 +17,7 @@ import AllUsers from "../../Pages/Dashboard/AllUsers";
 import AddAProduct from "../../Pages/Dashboard/AddAProduct";
 import MyProducts from "../../Pages/Dashboard/MyProducts";
 import Error404 from "../../Pages/Error404/Error404";
+import Users from "../../Pages/Dashboard/Users";
 
 const router = createBrowserRouter([
   {
@@ -104,6 +105,11 @@ const router = createBrowserRouter([
         path: "/dashboard/allusers",
         loader: () => fetch("http://localhost:5000/users"),
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "/dashboard/users",
+        loader: () => fetch("http://localhost:5000/users"),
+        element: <Users></Users>,
       },
       {
         path: "/dashboard/addaproduct",

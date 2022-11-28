@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import DashboardLayout from "../../Layout/DashboardLayout";
 
 const AllUsers = () => {
   const users = useLoaderData([]);
@@ -33,6 +34,7 @@ const AllUsers = () => {
           
           </tr>)
       }
+   
      
       
     </tbody>
