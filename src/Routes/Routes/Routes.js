@@ -49,8 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/apple",
-        loader: () =>
-          fetch("https://final-project-server-drab.vercel.app/apple"),
+        loader: () => fetch("http://localhost:5000/apple"),
         element: (
           <PrivateRoute>
             <Apple></Apple>
@@ -68,8 +67,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/asus",
-        loader: () =>
-          fetch("https://final-project-server-drab.vercel.app/asus"),
+        loader: () => fetch("http://localhost:5000/asus"),
         element: (
           <PrivateRoute>
             <Asus></Asus>
@@ -82,7 +80,7 @@ const router = createBrowserRouter([
         element: <Laptops></Laptops>,
         loader: ({ params }) =>
           fetch(
-            `https://final-project-server-drab.vercel.app/catagories?category_id=${params.category_id}`
+            `http://localhost:5000/catagories?category_id=${params.category_id}`
           ),
       },
       {
@@ -93,7 +91,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    loader: () => fetch("https://final-project-server-drab.vercel.app/users"),
+    loader: () => fetch("http://localhost:5000/users"),
     element: (
       <DashboardLayout>
         <Dashboard></Dashboard>
@@ -110,8 +108,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/allusers",
-        loader: () =>
-          fetch("https://final-project-server-drab.vercel.app/users"),
+        // loader: () => fetch("http://localhost:5000/users"),
         element: (
           <AdminRoute>
             <AllUsers></AllUsers>
@@ -120,8 +117,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/users",
-        loader: () =>
-          fetch("https://final-project-server-drab.vercel.app/users"),
+        loader: () => fetch("http://localhost:5000/users"),
         element: <Users></Users>,
       },
       {

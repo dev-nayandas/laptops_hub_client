@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const AddAProduct = () => {
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,19 +14,23 @@ const AddAProduct = () => {
     const img = form.img.value;
     const price = form.price.value;
     const condition = form.condition.value;
+    const location = form.location.value;
     const MobileNumber = form.MobileNumber.value;
     const description = form.description.value;
+    const email =user.email;
     const product = {
       model,
+      email,
       img,
       price,
       condition,
+      location,
       MobileNumber,
       description,
     };
     console.log(product);
 
-    fetch("https://final-project-server-drab.vercel.app/products", {
+    fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -121,7 +127,7 @@ const AddAProduct = () => {
                     </label>
                     <input
                       type="text"
-                      name="Location"
+                      name="location"
                       placeholder="location"
                       className="input input-bordered"
                       required
