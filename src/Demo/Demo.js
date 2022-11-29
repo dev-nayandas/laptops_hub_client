@@ -60,7 +60,7 @@ const SignUp = () => {
   // const email = user.email;
   const saveUser = (data) => {
     const user = { data };
-    fetch("http://localhost:5000/users", {
+    fetch("https://final-project-server-drab.vercel.app/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

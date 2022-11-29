@@ -5,7 +5,7 @@ const UseRoleCheck = (users) => {
   const [role, setRole] = useState(null);
   // const [loadinq,setLoading] = useState(true)
 
-  fetch("http://localhost:5000/users")
+  fetch("https://final-project-server-drab.vercel.app/users")
     .then((res) => res())
     .then((data) => setRole(data.role));
 

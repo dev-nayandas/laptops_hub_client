@@ -6,27 +6,27 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 
 const AllUsers = () => {
   // const users = useLoaderData([]);
-  const { data = [], refetch} = useQuery({
+  const { data = [], refetch } = useQuery({
     queryKey: [],
     queryFn: () =>
-      fetch("http://localhost:5000/users")
-      .then((res) => res.json()),
+      fetch("https://final-project-server-drab.vercel.app/users").then((res) =>
+        res.json()
+      ),
   });
-
 
   const handleDelete = (user) => {
     const agree = window.confirm(
       `Are you sure you want to delete ${user.name}`
     );
     if (agree) {
-      fetch(`http://localhost:5000/users/${user._id}`, {
+      fetch(`https://final-project-server-drab.vercel.app/users/${user._id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
           if (data.deletedCount > 0) {
-            refetch()
+            refetch();
             toast.success("User deleted successfully");
           }
         });
@@ -59,7 +59,7 @@ const AllUsers = () => {
                   <td>{user.accountType}</td>
                   <td>
                     <button
-                       onClick={() => handleDelete(user)}
+                      onClick={() => handleDelete(user)}
                       className="btn btn-primary btn-xs"
                     >
                       Delete

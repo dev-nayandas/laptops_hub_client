@@ -17,7 +17,7 @@ const AddAProduct = () => {
     const location = form.location.value;
     const MobileNumber = form.MobileNumber.value;
     const description = form.description.value;
-    const email =user.email;
+    const email = user.email;
     const product = {
       model,
       email,
@@ -30,7 +30,7 @@ const AddAProduct = () => {
     };
     console.log(product);
 
-    fetch("http://localhost:5000/products", {
+    fetch("https://final-project-server-drab.vercel.app/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

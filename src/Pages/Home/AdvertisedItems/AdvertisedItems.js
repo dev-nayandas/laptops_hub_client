@@ -7,7 +7,9 @@ const AdvertisedItems = () => {
   const { data = [] } = useQuery({
     queryKey: [],
     queryFn: () =>
-      fetch("http://localhost:5000/advertisedItems").then((res) => res.json()),
+      fetch(
+        "https://final-project-server-drab.vercel.app/advertisedItems"
+      ).then((res) => res.json()),
   });
   return (
     <div>

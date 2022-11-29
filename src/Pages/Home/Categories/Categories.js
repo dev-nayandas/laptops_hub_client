@@ -5,7 +5,7 @@ import Laptops from "../../Laptops/Laptops";
 const Categories = () => {
   const [name, setName] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/categoriesName")
+    fetch("https://final-project-server-drab.vercel.app/categoriesName")
       .then((res) => res.json())
       .then((data) => setName(data));
   }, []);

@@ -8,7 +8,9 @@ const Samsung = () => {
   const { data = [] } = useQuery({
     queryKey: [],
     queryFn: () =>
-      fetch("http://localhost:5000/samsung").then((res) => res.json()),
+      fetch("https://final-project-server-drab.vercel.app/samsung").then(
+        (res) => res.json()
+      ),
   });
   const [item, setItem] = useState(null);
   return (

@@ -4,12 +4,12 @@ import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const MyProductTable = ({ product }) => {
   console.log(product);
-  const { ProductName, price, MobileNumber,model } = product;
+  const { ProductName, price, MobileNumber, model } = product;
 
-  const {isLoading} = useContext(AuthContext);
+  const { isLoading } = useContext(AuthContext);
 
   const handleMakeAdd = () => {
-    fetch("http://localhost:5000/advertisedItems", {
+    fetch("https://final-project-server-drab.vercel.app/advertisedItems", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,17 +20,14 @@ const MyProductTable = ({ product }) => {
       .then((data) => {
         if (data.acknowledged) {
           toast.success("Successfully  maked a add");
-          isLoading(false)
+          isLoading(false);
         }
       });
   };
 
   return (
-    <div >
-     
+    <div>
       <tr>
-       
-       
         <td>{model}</td>
         <td>{price}</td>
         <td>{MobileNumber}</td>
@@ -43,7 +40,6 @@ const MyProductTable = ({ product }) => {
         <td>
           <button className="btn btn-info">Delete sales status</button>
         </td>
-    
       </tr>
       <Toaster></Toaster>
     </div>

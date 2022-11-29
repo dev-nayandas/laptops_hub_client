@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const Laptops = () => {
   const [name, setName] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/categoriesName")
+    fetch("https://final-project-server-drab.vercel.app/categoriesName")
       .then((res) => res.json())
       .then((data) => setName(data));
   }, []);

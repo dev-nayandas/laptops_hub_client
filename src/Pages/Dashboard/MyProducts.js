@@ -4,29 +4,27 @@ import MyProductTable from "./MyProductTable";
 
 const MyProducts = () => {
   const [products, setProducts] = useState([]);
-  const { user ,isLoading} = useContext(AuthContext);
+  const { user, isLoading } = useContext(AuthContext);
   useEffect(() => {
-    if(isLoading){
-      return <progress className="progress w-56" value="0" max="100"></progress>
-
-
-   }
-   if(user && user?.email ) {
-    const url = `http://localhost:5000/products?email=${user?.email}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setProducts(data);
-      });
-}
-
-    
+    if (isLoading) {
+      return (
+        <progress className="progress w-56" value="0" max="100"></progress>
+      );
+    }
+    if (user && user?.email) {
+      const url = `https://final-project-server-drab.vercel.app/products?email=${user?.email}`;
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          setProducts(data);
+        });
+    }
   }, []);
   let { ProductName } = products;
   console.log(ProductName);
   return (
-    <div >
+    <div>
       <div>
         <div>
           <h1>All Product</h1>
