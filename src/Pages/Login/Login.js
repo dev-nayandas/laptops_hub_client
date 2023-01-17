@@ -49,7 +49,13 @@ const Login = () => {
     return (
         <div className='h-[800px]  flex justify-center items-center bg-red-100'>
             <div className='w-96 p-7'>
+            <h3 className='mb-5 text-primary'>User Credential for test </h3>
+            <h3 className='mb-5 text-primary'>Buyer: chalo@gmail.com </h3>
+            <h3 className='mb-5 text-primary'>Seller: raj@gmail.com </h3>
+            <h3 className='mb-5 text-primary'>Admin: sumon@gmail.com </h3>
+            <h3 className='mb-5 text-primary'>Password: 123456 </h3>
                 <h2 className='text-4xl text-center'>Please Login</h2>
+                
                 <form onSubmit={handleSubmit(handleLogin)}>
         <div className="form-control w-full max-w-xs">
             <label className="label">

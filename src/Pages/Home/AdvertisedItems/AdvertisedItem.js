@@ -3,7 +3,7 @@ import React from 'react';
 const AdvertisedItem = ({item}) => {
     const {model,img,location, resalePrice,orginalPrice,condition, usedTime, sellerName, price,MobileNumber} = item;
     return (
-        <div className="card w-96 bg-base-100 shadow-xl border-4 border-indigo-200 border-t-indigo-500">
+        <div className="card w-96 bg-red-100 shadow-xl border-4 border-indigo-200 border-t-indigo-500 mb-5">
         <figure className="px-10 pt-10">
           <img style={{height:'300px'}} src={img} alt="Shoes" className="rounded-xl" />
         </figure>
