@@ -9,7 +9,7 @@ const MyProductTable = ({ product }) => {
   const { isLoading } = useContext(AuthContext);
 
   const handleMakeAdd = () => {
-    fetch("https://final-project-server-drab.vercel.app/advertisedItems", {
+    fetch("http://localhost:5000/advertisedItems", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

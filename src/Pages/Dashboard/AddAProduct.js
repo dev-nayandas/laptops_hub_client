@@ -30,7 +30,7 @@ const AddAProduct = () => {
     };
     console.log(product);
 
-    fetch("https://final-project-server-drab.vercel.app/products", {
+    fetch("http://localhost:5000/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

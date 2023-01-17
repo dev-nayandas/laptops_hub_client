@@ -9,9 +9,7 @@ const AllUsers = () => {
   const { data = [], refetch } = useQuery({
     queryKey: [],
     queryFn: () =>
-      fetch("https://final-project-server-drab.vercel.app/users").then((res) =>
-        res.json()
-      ),
+      fetch("http://localhost:5000/users").then((res) => res.json()),
   });
 
   const handleDelete = (user) => {
@@ -19,7 +17,7 @@ const AllUsers = () => {
       `Are you sure you want to delete ${user.name}`
     );
     if (agree) {
-      fetch(`https://final-project-server-drab.vercel.app/users/${user._id}`, {
+      fetch(`http://localhost:5000/users/${user._id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

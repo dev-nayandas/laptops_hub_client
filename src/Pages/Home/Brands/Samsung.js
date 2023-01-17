@@ -8,9 +8,7 @@ const Samsung = () => {
   const { data = [] } = useQuery({
     queryKey: [],
     queryFn: () =>
-      fetch("https://final-project-server-drab.vercel.app/samsung").then(
-        (res) => res.json()
-      ),
+      fetch("http://localhost:5000/samsung").then((res) => res.json()),
   });
   const [item, setItem] = useState(null);
   return (
@@ -20,7 +18,7 @@ const Samsung = () => {
           All Samsung products are here
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-3">
         {data.map((samsung) => (
           <SamsungCard
             key={samsung._id}

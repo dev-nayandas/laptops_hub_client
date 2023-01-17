@@ -12,7 +12,7 @@ const Apple = () => {
             <div>
             <h1 className='text-center text-3xl text-primary mt-12 mb-6'>All apple products are here</h1>
             </div>
-            <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div  className='grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-3'>
                 {
                     apple.map(apple => <AppleCard
                         key={apple._id}

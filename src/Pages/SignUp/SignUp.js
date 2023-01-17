@@ -26,6 +26,20 @@ const SignUp = () => {
         navigate("/home");
 
         console.log(user.email);
+        const userInfo = {
+          accountType: "Buyer",
+        };
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        });
+        updateUser(userInfo).then(() => {
+          saveUser(userInfo.accountType);
+          navigate("/home");
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -58,7 +72,7 @@ const SignUp = () => {
 
   const saveUser = (name, email, accountType) => {
     const user = { name, email, accountType };
-    fetch("https://final-project-server-drab.vercel.app/users", {
+    fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -132,6 +146,7 @@ const SignUp = () => {
                 minLength: {
                   value: 6,
                   message: "Password must be 6 characters long",
+                  pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must have uppercase, number and special characters' }
                 },
               })}
               className="input input-bordered w-full max-w-xs"

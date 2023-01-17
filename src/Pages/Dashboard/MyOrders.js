@@ -8,7 +8,7 @@ import AuthProvider, {
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
 
-  const url = `https://final-project-server-drab.vercel.app/orders?email=${user?.email}`;
+  const url = `http://localhost:5000/orders?email=${user?.email}`;
 
   const [orders, setOrders] = useState([]);
   useEffect(() => {

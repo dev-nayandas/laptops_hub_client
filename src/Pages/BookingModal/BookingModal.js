@@ -37,7 +37,7 @@ const BookingModal = ({ item }) => {
     };
     console.log(laptop);
 
-    fetch("https://final-project-server-drab.vercel.app/booking", {
+    fetch("http://localhost:5000/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

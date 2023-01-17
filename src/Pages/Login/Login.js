@@ -63,7 +63,11 @@ const Login = () => {
                 <span className="label-text">Password</span>
              </label>
           
-            <input {...register("password", {required:"Password Address is required"})} placeholder="password" type="password" className="input input-bordered w-full max-w-xs"/>
+            <input {...register("password", {required:"Password Address is required",
+           minLength: { value: 6, message: 'Password must be 6 characters or longer' }  
+          })} 
+            
+            placeholder="password" type="password" className="input input-bordered w-full max-w-xs"/>
             {errors.password && <p className='text-red-500' role="alert">{errors.password?.message}</p>}
             <label className="label">
                 <span className="label-text">Forget Password</span>

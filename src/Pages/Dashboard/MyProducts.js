@@ -12,7 +12,7 @@ const MyProducts = () => {
       );
     }
     if (user && user?.email) {
-      const url = `https://final-project-server-drab.vercel.app/products?email=${user?.email}`;
+      const url = `http://localhost:5000/products?email=${user?.email}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
