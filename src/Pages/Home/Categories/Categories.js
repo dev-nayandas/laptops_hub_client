@@ -16,7 +16,7 @@ const Categories = () => {
           Categories By Brand
         </h2>
       </div>
-      <div className="mx-auto w-96">
+      <div className="">
         {/* {
                     name.map(catagory => <Laptops
                     key={catagory._id}
@@ -24,7 +24,62 @@ const Categories = () => {
 
                     ></Laptops>)
                  } */}
-        <Link to="/apple" className="px-4">
+
+        <div className="grid place-items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          <Link to="/apple">
+            <div className="card w-96 bg-base-100 shadow-xl image-full">
+              <figure>
+                <img
+                  src="https://images.pexels.com/photos/18105/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Shoes"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Apple!</h2>
+                <p>See the all Products of apple to buy</p>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link to="/samsung">
+            <div className="card w-96 bg-base-100 shadow-xl image-full">
+              <figure>
+                <img
+                  src="https://images.pexels.com/photos/459653/pexels-photo-459653.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Shoes"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Samsung!</h2>
+                <p>See the all Products of Samsung to buy</p>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link to="/asus">
+            <div className="card w-96 bg-base-100 shadow-xl image-full">
+              <figure>
+                <img
+                  src="https://images.pexels.com/photos/69432/pexels-photo-69432.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Shoes"
+                />
+              </figure>
+              <div className="card-body">
+                <h2 className="card-title">Asus!</h2>
+                <p>See the all Products of Asus to buy</p>
+                <div className="card-actions justify-end">
+                  <button className="btn btn-primary">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* <Link to="/apple" className="px-4">
           <button className="btn btn-outline btn-primary ">Apple</button>
         </Link>
 
@@ -34,7 +89,7 @@ const Categories = () => {
 
         <Link to="/asus" className="px-4">
           <button className="btn btn-outline btn-primary ">Asus</button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

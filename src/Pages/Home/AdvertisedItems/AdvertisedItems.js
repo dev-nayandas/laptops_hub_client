@@ -16,7 +16,7 @@ const AdvertisedItems = () => {
           Advertised Items
         </h2>
       </div>
-      <div className="grid place-items-center grid-cols-01 md:grid-cols-3 lg:grid-cols-3 ">
+      <div className="grid place-items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-3 ">
         {data.map((item) => (
           <AdvertisedItem key={item._id} item={item}></AdvertisedItem>
         ))}

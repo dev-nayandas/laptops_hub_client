@@ -17,6 +17,9 @@ const NavBar = () => {
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
+      <li>
+        <Link to="/dashboard">Dashboard</Link>
+      </li>
     </>
   );
   return (
@@ -46,11 +49,11 @@ const NavBar = () => {
             {menuItems}
             {user?.email ? (
               <div className="">
-                <li>
+                {/* <li>
                   <Link to="dashboard no-underline" className="link">
                     Dashboard
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link onClick={handleSignOut} className="link no-underline">
                     Sign Out
@@ -59,8 +62,8 @@ const NavBar = () => {
               </div>
             ) : (
               <div>
-                <li>
-                  <Link className="link" to="/login">
+                <li >
+                  <Link className="link no-underline" to="/login">
                     Login
                   </Link>
                 </li>
@@ -77,11 +80,11 @@ const NavBar = () => {
           {menuItems}
           {user?.email ? (
             <div className="flex">
-              <li>
+              {/* <li>
                 <Link to="dashboard" className="link no-underline">
                   Dashboard
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link onClick={handleSignOut} className="link no-underline">
                   Sign Out
@@ -91,7 +94,7 @@ const NavBar = () => {
           ) : (
             <div>
               <li>
-                <Link className="link" to="/login">
+                <Link className="link no-underline" to="/login">
                   Login
                 </Link>
               </li>
@@ -99,7 +102,7 @@ const NavBar = () => {
           )}
         </ul>
       </div>
-      <label
+      {/* <label
         htmlFor="dashboard-drawer"
         tabIndex={2}
         className="btn btn-ghost lg:hidden"
@@ -118,7 +121,7 @@ const NavBar = () => {
             d="M4 6h16M4 12h8m-8 6h16"
           />
         </svg>
-      </label>
+      </label> */}
     </div>
   );
 };
