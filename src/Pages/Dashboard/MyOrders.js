@@ -17,8 +17,7 @@ const MyOrders = () => {
       .then((data) => setOrders(data));
   });
   return (
-    <div >
-      
+    <div>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
           <thead>
