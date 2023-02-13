@@ -24,7 +24,7 @@ const [isSeller] = useSeller(user?.email);
           className="drawer-toggle"
         />
         <div className="drawer-content flex flex-col ">
-          <h1>Click left sidebar links to see details</h1>
+          <h1 className="text-center text-4xl">Click left sidebar links to see details</h1>
           <Outlet></Outlet>
         </div>
         <div className="drawer-side">
@@ -32,7 +32,7 @@ const [isSeller] = useSeller(user?.email);
           <ul className="menu p-4 w-80 bg-base-100 text-base-content">
            
          {
-          isBuyer &&  <Link to="/dashboard/orders">My Orders</Link>
+          isBuyer &&  <Link to="/dashboard/orders"><h3 className="text-3xl text-primary">My Orders</h3></Link>
          }
          {
           isAdmin   &&  <Link to="/dashboard/allusers">All Sellers & Buyers</Link> 

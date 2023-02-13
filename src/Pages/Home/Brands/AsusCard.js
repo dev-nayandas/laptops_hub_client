@@ -4,7 +4,7 @@ const AsusCard = ({asus,setItem}) => {
     const {model,img,location, resalePrice,orginalPrice, usedTime, sellerName} = asus;
    
     return (
-        <div className="card w-96 bg-base-100 shadow-xl bg-indigo-900 text-accent mb-6">
+        <div className="card w-96 bg-base-100 shadow-xl bg-black text-accent mb-6">
         <figure><img style={{height:'400px' , width:'500px'}} src={img} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">Model :{model}</h2>

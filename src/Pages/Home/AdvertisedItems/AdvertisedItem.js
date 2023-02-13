@@ -4,8 +4,8 @@ const AdvertisedItem = ({item}) => {
     const {model,img,location, resalePrice,orginalPrice,condition, usedTime, sellerName, price,MobileNumber} = item;
     return (
         <div className="card w-96 bg-red-100 shadow-xl border-4 border-indigo-200 border-t-indigo-500 mb-5">
-        <figure className="px-10 pt-10">
-          <img style={{height:'300px'}} src={img} alt="Shoes" className="rounded-xl" />
+        <figure className="px-10 pt-10 w-full">
+          <img style={{height:'300px'}} src={img} alt="laptops" className="rounded-xl" />
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">Model :{model}</h2>

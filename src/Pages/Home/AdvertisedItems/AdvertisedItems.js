@@ -12,7 +12,7 @@ const AdvertisedItems = () => {
   return (
     <div>
       <div>
-        <h2 className="text-yellow-800 text-3xl text-center p-6 mt-12">
+        <h2 className="text-white text-3xl text-center p-6 mt-12">
           Advertised Items
         </h2>
       </div>
